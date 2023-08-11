@@ -1,0 +1,98 @@
+public class App {
+    public static void main(String[] args) throws Exception {
+        calcularMedia(9, 8, 10);
+        mostrarNumeros();
+
+        int num = 8;
+        boolean eh_primo = ePrimo(num);
+
+	    if(eh_primo) {
+		    System.out.println("O número " + num +" é primo!");
+	    } else{
+		    System.out.println("O número "+ num +" não é primo!");
+		    System.out.println(num +" é divisivel por: ");
+		    numeros_divisiveis(num);
+	    }
+
+	    dia_da_semana(3);
+
+        int ano = 1900;
+        if (e_bissexto(ano)) {
+            System.out.println("\no ano "+ ano + " é bissexto");
+        } else {
+            System.out.println("\no ano "+ ano + " não é bissexto");
+        }
+
+    }
+
+    public static void calcularMedia(double ap1, double ap2, double ac){
+        double m = (ap1 + ap2) * 0.4 + ac * 0.2;
+        System.out.println(m);
+    }
+
+    public static void mostrarNumeros(){
+        for (int i = 150; i <= 200; i++) {
+            System.out.println(i);
+        }
+
+    }
+
+    public static Boolean ePrimo(int num){
+        boolean e_primo = true;
+	    for (int i = 2; i < num; i++) {
+		    if(num % i == 0) {
+			    return !e_primo;
+		}
+	}
+	return e_primo;
+    }
+
+
+    public static void numeros_divisiveis(int num){
+        for (int i = 1; i <= num; i++) {
+            if(num % i == 0 ) {
+                System.out.println(i);
+            }
+        }
+    }
+
+    public static void dia_da_semana(int num ){
+        switch (num) {
+        case 1:
+            System.out.println("Domingo");
+            break;
+        case 2:
+            System.out.println("Segunda");
+            break;
+        case 3:
+            System.out.println("Terça");
+            break;
+        case 4:
+            System.out.println("Quarta");
+            break;
+        case 5:
+            System.out.println("Quinta");
+            break;
+        case 6:
+            System.out.println("Sexta");
+            break;
+        case 7:
+            System.out.println("Sábado");
+            break;
+        default:
+            System.out.println("valor invalido");
+        }
+    }
+
+    public static boolean e_bissexto(int ano) {
+        if(ano % 100 == 0 && ano % 400 != 0) {
+            return false;
+        } else if(ano % 4 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+}
