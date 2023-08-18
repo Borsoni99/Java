@@ -1,0 +1,89 @@
+import java.util.Scanner;
+
+public class Ac2 {
+    public static void main(String[] args) throws Exception {
+        Scanner leitor = new Scanner(System.in);
+        String opcao = "";
+        
+        while (true){
+            String operacao;
+            double num1, num2;
+            int cont = 0;
+            if (opcao.toLowerCase().equals("x")) {
+                    break;
+            }
+
+            System.out.println("Escreva um numero: ");
+            num1 = leitor.nextDouble();
+        
+            while (true) {
+                if(cont > 0){
+                    System.out.println("Digite (n) para uma nova operacao, (r) para recomeçar o calculo ou (x) para sair");
+                    opcao = leitor.next();
+                }
+                
+                if (opcao.toLowerCase().equals("r")) {
+                    break;
+                }
+                if (opcao.toLowerCase().equals("x")) {
+                    break;
+                }
+
+                System.out.println("operacoes disponiveis:");
+                System.out.println("-----------------------");
+                System.out.println("(soma) soma");
+                System.out.println("(sub) subtracao");
+                System.out.println("(mult) multiplicacao");
+                System.out.println("(div) divisao");
+                System.out.println("-----------------------");
+                operacao = leitor.next();
+
+                System.out.println("Escreva um numero: ");
+                num2 = leitor.nextDouble();
+
+                switch (operacao.toLowerCase()) {
+                case "soma":
+                    num1 = soma(num1, num2);
+                    break;
+                case "sub":
+                    num1 = subtracao(num1, num2);
+                    break;
+                case "mult":
+                    num1 = multiplicao(num1, num2);
+                    break;
+                case "div":
+                    num1 = divisao(num1, num2);
+                    break;
+        
+                default:
+                    break;
+                }
+                cont++;
+            }
+        }
+        leitor.close();
+        System.out.println("saindo...");
+    }
+
+    public static double soma(double num1, double num2){
+        double resultado = num1 + num2;
+        System.out.println(resultado);
+        return resultado;
+    }
+    public static double subtracao(double num1, double num2){
+        double resultado = num1 - num2;
+        System.out.println(resultado);
+        return resultado;
+    }
+    public static double multiplicao(double num1, double num2){
+        double resultado = num1 * num2;
+        System.out.println(resultado);
+        return resultado;
+    }
+    public static double divisao(double num1, double num2){
+        double resultado = num1 / num2;
+        System.out.println(resultado);
+        return resultado;
+    }
+
+}
