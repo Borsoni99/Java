@@ -39,7 +39,7 @@ public class AlunoCRUD {
         return null;
     }
 
-    public List<Aluno> listarTodos() {
+    public List<Aluno> listar() {
         return alunos;
     }
 
