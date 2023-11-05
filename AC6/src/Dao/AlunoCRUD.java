@@ -4,7 +4,7 @@ import java.util.List;
 
 import Entidades.Aluno;
 
-public class AlunoCRUD {
+public class AlunoDao {
 
     ArrayList<Aluno> alunos = new ArrayList<>();
 
