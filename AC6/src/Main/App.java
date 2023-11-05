@@ -86,7 +86,7 @@ public class App {
 
     public static void carregarDados(AlunoCRUD alunoCRUD) {
         try {
-            FileReader fileReader = new FileReader("C:/Users/thiag/Downloads/Java-main/Java-main/AC6/src/alunos.txt");
+            FileReader fileReader = new FileReader("C:/pooJava/AC6/src/alunos.txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
             String linha;
@@ -126,7 +126,7 @@ public class App {
     List<Aluno> alunos = alunoCRUD.listarTodos();
 
     try {
-        FileWriter fileWriter = new FileWriter("C:/Users/thiag/Downloads/Java-main/Java-main/AC6/src/alunos.txt");
+        FileWriter fileWriter = new FileWriter("C:/pooJava/AC6/src/alunos.txt");
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
         for (Aluno aluno : alunos) {
