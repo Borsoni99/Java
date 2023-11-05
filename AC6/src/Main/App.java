@@ -9,13 +9,13 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-import Dao.AlunoCRUD;
+import Dao.AlunoDao;
 import Entidades.Aluno;
 
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        AlunoCRUD alunoCRUD = new AlunoCRUD();
+        AlunoDao alunoCRUD = new AlunoDao();
         String nome;
         String curso;
         Integer matricula;
@@ -86,7 +86,7 @@ public class App {
         salvarDados(alunoCRUD);
     }
 
-    public static void carregarDados(AlunoCRUD alunoCRUD) {
+    public static void carregarDados(AlunoDao alunoCRUD) {
         try {
             FileReader fileReader = new FileReader("C:/pooJava/AC6/src/alunos.txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -124,7 +124,7 @@ public class App {
         }
     }
 
-    public static void salvarDados(AlunoCRUD alunoCRUD) {
+    public static void salvarDados(AlunoDao alunoCRUD) {
     List<Aluno> alunos = alunoCRUD.listar();
 
     try {
