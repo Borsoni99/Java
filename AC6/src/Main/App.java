@@ -44,9 +44,9 @@ public class App {
                     System.out.println("Digite a matrícula: ");
                     matricula = scanner.nextInt();
 
-                    Aluno aluno = new Aluno(nome, curso, matricula);
+                    Aluno Novoaluno = new Aluno(nome, curso, matricula);
 
-                    alunoCRUD.adicionar(aluno);
+                    alunoCRUD.adicionar(Novoaluno);
                     break;
                 case 2:
                     // Remover aluno
@@ -69,7 +69,9 @@ public class App {
                     break;
                 case 4:
                     // Listar alunos
-                    System.out.println(alunoCRUD.listarTodos());
+                    for(Aluno aluno : alunoCRUD.listar()){
+                        System.out.println(aluno.toString());
+                    }
                     break;
                 case 5:
                     // Sair
@@ -123,7 +125,7 @@ public class App {
     }
 
     public static void salvarDados(AlunoCRUD alunoCRUD) {
-    List<Aluno> alunos = alunoCRUD.listarTodos();
+    List<Aluno> alunos = alunoCRUD.listar();
 
     try {
         FileWriter fileWriter = new FileWriter("C:/pooJava/AC6/src/alunos.txt");
