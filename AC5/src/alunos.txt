@@ -1,0 +1,4 @@
+Maria Santos,ciencias,5678
+Carlos Ferreira,Arquitetura,9876
+Ana Oliveira,Pedagogia,3456
+daniel,ciencia de dados,202209345
